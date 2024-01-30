@@ -2,9 +2,8 @@
 #include <stdarg.h>
 /**
  * _printf - produces output aacording to format
- * @format: the first arguement 
- * @c:character to display on the output
- * Returns:returns number of character printed
+ * @format:the first arguement
+ * Return:returns the number of character to be counted
  */
 int _printf(const char *format, ...)
 {
@@ -24,12 +23,12 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '%')
 			{
-				write(1' format, 1)
+				write(1, format, 1);
 					count++;
 			}
 			else if (*format == 'c')
 			{
-				char c = va_arg(ptr, ch);
+				char c = va_arg(ptr, int);
 				write(1, &c, 1);
 				count++;
 			}
@@ -37,10 +36,10 @@ int _printf(const char *format, ...)
 			{
 				char *str = va_arg(ptr, char *);
 				int str_len = 0;
-				while (str[st_len] != '\0')
-					s_len++;
-				write(1, s, s_len);
-				count += s_len;
+				while (str[str_len] != '\0')
+					str_len++;
+				write(1, str, str_len);
+				count += str_len;
 			}
 			format++;
 		}
