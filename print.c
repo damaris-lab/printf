@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			write(1, format, 1);
-			coun++;
+			count++;
 		}
 		else
 		{
@@ -25,22 +25,21 @@ int _printf(const char *format, ...)
 			{
 				count = print_str(arg);
 			else if (*format == 'c')
-				count += print_char(arg);
-			else if (*format == 'c')
-				count += print_char(arg);
+				count = print_char(arg);
 			else if (*format == 'i' || *format == 'd')
-				count += print_num(arg);
+				count = print_num(arg);
 			else
 			{
-				write(1, format, -1, 2);
+				write(1, format -1, 2);
 				count += 2;
 			}
 			}
-			format++;
 		}
-		va_end(arg);
-		return (count);
+		format++;
 	}
+	va_end(arg);
+	return (count);
+}
 /**
  * print_str - prints string character on stdout
  * @arg:pointer to first arguement
@@ -53,7 +52,7 @@ int print_str(va_list arg)
 
 	count = 0;
 	str = va_arg(arg, char *);
-	write(1, str, strlen(str);
+	write(1, str, strlen(str));
 	count += strlen(str);
 	return (count);
 }
