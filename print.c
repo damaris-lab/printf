@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 /**
  * print_str - prints string character on stdout
  * @arg:pointer to first arguement
- * Retur:return string
+ * Return:return str count
  */
 int print_str(va_list arg)
 {
@@ -93,7 +93,7 @@ int print_num(va_list arg)
 	}
 	return (count);
 }
-}
+
 
 
 

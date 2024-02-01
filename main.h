@@ -9,8 +9,8 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-/*
- * end print functions
- */
+int print_str(va_list arg);
+int print_char(va_arg arg);
+int print_num(va_arg arg);
 
-#endif/*MAIN_H*/
+#endif
