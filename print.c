@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
 /**
  * _printf - produces output aacording to format
  * @format:the first arguement
@@ -22,21 +21,15 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			if (*format == 's')
-			{
 				count = print_str(arg);
 			else if (*format == 'c')
-			{
 				count = print_char(arg);
-			}
 			else if (*format == 'i' || *format == 'd')
-			{
 				count = print_num(arg);
-			}
 			else
 			{
 				write(1, format -1, 2);
 				count += 2;
-			}
 			}
 		}
 		format++;
@@ -47,7 +40,7 @@ int _printf(const char *format, ...)
 /**
  * print_str - prints string character on stdout
  * @arg:pointer to first arguement
- * Return:return str count
+ * Return:returni str count
  */
 int print_str(va_list arg)
 {
