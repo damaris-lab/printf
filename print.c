@@ -25,9 +25,13 @@ int _printf(const char *format, ...)
 			{
 				count = print_str(arg);
 			else if (*format == 'c')
+			{
 				count = print_char(arg);
+			}
 			else if (*format == 'i' || *format == 'd')
+			{
 				count = print_num(arg);
+			}
 			else
 			{
 				write(1, format -1, 2);
