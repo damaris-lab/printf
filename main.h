@@ -5,12 +5,60 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <string.h>
 
+/**
+ * struct type_s - structure to hold types
+ * @var: variable
+ * @f: matching function
+ * Description: structure holds function calls
+ */
+typedef struct type_s
+{
+	char *identifier;
+	int *function(buffer *, va_list);
+}type_t;
+
+type_t *type_t_init();
+
+/**
+ * struct print_buffer - struct for a print buffer
+ * @index: index of buffer
+ * @size: size of the buffer
+ * @overflow: overflow
+ * @str: pointer to memory buffer
+ */
+typedef struct print_buffer
+{
+	size_t index;
+	size_t size;
+	size_t overflow;
+	char *str;
+}buffer;
+/*
+ * buffer functions
+ */
+void buf_increment(buffer *buf);
+buffer *buf_new();
+buffer *buf_custom(size_t size);
+void buf_end(buffer *buf);
+void buf_wrt(buffer *buf);
+void buf_write(buffer *buf);
+char *buffer_content(buffer *buf);
+size_t buffer_size(buffer *buf);
+size_t buffer_index(buffer *buf);
+/*
+ * end buffer functions
+ */
+/*
+ * start of print functions
+ */
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_str(va_list arg);
 int print_char(va_list arg);
 int print_num(va_list arg);
+/*
+ * end print functions
+ */
 
-#endif
+#endif/*MAIN_H*/
